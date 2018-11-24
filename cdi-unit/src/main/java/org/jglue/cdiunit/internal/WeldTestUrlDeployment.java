@@ -433,6 +433,7 @@ public class WeldTestUrlDeployment implements Deployment {
 				String classpath = (String) manifest.getMainAttributes()
 						.get(Attributes.Name.CLASS_PATH);
 				if (classpath != null) {
+					// This seems to be the problem
 					String[] manifestEntries = classpath.split(" ?file:");
 					for (String entry : manifestEntries) {
 						if (entry.length() > 0) {
